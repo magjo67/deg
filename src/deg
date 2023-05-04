@@ -1,0 +1,83 @@
+#!/usr/bin/python3
+
+import os
+import argparse
+import pandas as pd
+from ingredienser import Ingredienser
+
+ing_vikt = pd.read_csv('ing_vikt.csv', index_col='kort')
+ing_proc = pd.read_csv('ing_proc.csv', index_col='kort')
+ing_proc.sort_values(by='hydrering', inplace=True, ascending=False)
+
+parser = argparse.ArgumentParser(description='Räkna ut mjölmängder.')
+# Argument för fasta vikter
+for kort in ing_vikt.index:
+    long = ing_vikt.long[kort].replace("%", "%%")
+    parser.add_argument(
+        "--"+kort, default=ing_vikt.default[kort], type=float, metavar='', help=long)
+# Argument för procentuella
+for kort in ing_proc.index:
+    long = ing_proc.long[kort].replace("%", "%%") + "\t" + str(
+        ing_proc.hydrering[kort]) + "\t pris = "+str(ing_proc.pris[kort]) + "kr/kg"
+    parser.add_argument(
+        "--"+kort, default=ing_proc.default[kort], type=float, metavar='', help=long)
+args = parser.parse_args()
+vatten = args.vatten
+# print ("vatten = ", vatten)
+hydrering = args.hydrering
+# print ("hydrering = ", hydrering)
+vtot = 0
+mtot = 0
+proctot = 0
+bill = []
+# Räkna fram mängd vatten
+for kort, vikt in vars(args).items():
+    if vikt > 0:
+        try:
+            vvikt = vikt * ing_vikt.fukt[kort]
+            vtot += vvikt
+            mvikt = vikt * ing_vikt.mjöl[kort]
+            mtot += mvikt
+            # print(kort, vikt, vikt * ing_vikt.fukt[kort], vikt * ing_vikt.mjöl[kort])
+            if vvikt > 0 and vvikt > 0:
+                rad = Ingredienser(kort, ing_vikt.long[kort], vikt, vikt * ing_vikt.pris[kort])
+                # print (rad)
+                bill.append(rad)
+        except KeyError as e:
+            None
+# print("vatten = ", vtot)
+# Räkna fram mjölmängder
+for kort, procent in vars(args).items():
+    # print (kort, procent)
+    try:
+        lhyd = ing_proc.hydrering[kort]
+    except KeyError as e:
+        lhyd = 0
+    if procent > 0 and lhyd > 0:
+        mvikt = vtot * procent / hydrering / ing_proc.hydrering[kort] / 100
+        mtot += mvikt
+        proctot += procent
+        rad = Ingredienser(kort, ing_proc.long[kort], mvikt, mvikt * ing_proc.pris[kort])
+        bill.append(rad)
+# print(proctot)
+if proctot < 100:
+    vete = vtot * (100 - proctot) / hydrering / ing_proc.hydrering['vete10'] / 100
+    mtot += vete
+    bill.append(Ingredienser("vete10", ing_proc.long["vete10"], vete, vete * ing_proc.pris["vete10"]))
+if proctot > 100:
+    print("För många procent")
+    exit()
+salt = (mtot + vtot) * args.salt / 100
+bill.insert(1, Ingredienser("salt", ing_proc.long["salt"], salt, salt * ing_proc.pris["salt"]))
+yeast = (mtot + vtot) * args.jäst / 100
+bill.insert(2, Ingredienser("jäst", ing_proc.long["jäst"], yeast, yeast * ing_proc.pris["jäst"]))
+
+print(f"{'Ingredienser':<26}=    {'Vikt':<4}    {'Bagarprocent':<5}  {'Pris':<5}")
+pristot = 0
+vikttot = 0
+for rad in bill:
+    pristot += rad.pris
+    vikttot += rad.vikt
+    print(f"{rad.long:<26}={rad.vikt:5.0f} gram {rad.vikt/mtot*100:4.0f} Procent {rad.pris/1000:5.2f} kr")
+print(f"{'Totalvikt':<26}={vikttot:5.0f} gram, mjöl {mtot:.0f} gram, pris {pristot/1000:.2f} kr, total hydrering {vtot/mtot:.3f}")
+print("")

@@ -1,0 +1,20 @@
+kort,long,hydrering,pris,default
+salt,Salt,0,16,1.1
+jäst,Jäst,0,64,0.6
+vete10,ICA Vetemjöl 10%,1.0,8.75,0
+vete12,ICA Specialvetemjöl 12%,1.05,12.75,0
+vete13,Finax TIPO 00 13%,1.09,16.0,0
+veteun,United Gross 9.5%,0.97,14.0,0
+fullkorn,ICA fullkorn gramhamsmjöl,1.25,15.0,0
+fullkung,Kungsörnen fullkorn vete,1.1,16.0,0
+dinkel,ICA Ekologisk dinkel 11%,1.03,32.0,0
+rågsikt,ICA Rågsikt,1.14,12.0,0
+rågmjöl,ICA Fint rågmjöl,1.6,13.0,0
+råggrov,ICA Grovt rågmjöl,1.18,14.0,0
+rågkross,Kungsörnen rågkross,1.53,16.0,0
+graham,ICA Finkornigt graham,1.37,15.0,0
+kruska,Kungsörnens kruskakli,2.44,17.0,0
+vetekli,Kungsörnens vetekli,2.4,17.0,0
+vetegrodd,Risenta vetegroddar,2.1111,30.0,0
+havregryn,ICA Havregryn,1.75,12.0,0
+havrekli,Kungsörnens havrekli,2.5,17.0,0

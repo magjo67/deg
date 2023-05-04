@@ -21,3 +21,4 @@ Baker's percentage fungerar om man vill skala upp (eller ner) ett recept, inte o
 Min lösning på det hela är att istället att vända på logiken.
 Om man utgår från mängden vatten och talar om hur många procent utav respektive mjölsort man vill ha.
 Detta kräver att man har någon form av tabell med olika mjölsorters uppsugningsförmåga.
+
