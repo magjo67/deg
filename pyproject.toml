@@ -1,14 +1,9 @@
 [project]
 name = "deg"
-
-version = "2.0a1"
-
+version = "2.0.2"
 description = "Program för att skapa degrecept"
-
 readme = "README.md" 
-
 requires-python = ">=3.7"
-
 license = {file = "LICENSE"}
 
 # This field adds keywords for your project which will appear on the
@@ -46,7 +41,6 @@ classifiers = [
   # Indicate who your project is intended for
   "Intended Audience :: Developers",
   "Intended Audience :: Other Audience",
-  "Intended Audience :: Manufacturing",
 
   # Pick your license as you wish
   "License :: OSI Approved :: BSD License",
@@ -117,5 +111,5 @@ package-data = {"sample" = ["*.csv"]}
 [build-system]
 # These are the assumed default build requirements from pip:
 # https://pip.pypa.io/en/stable/reference/pip/#pep-517-and-518-support
-requires = ["setuptools>=43.0.0", "wheel"]
+requires = ["setuptools>=43.0.0"]
 build-backend = "setuptools.build_meta"
