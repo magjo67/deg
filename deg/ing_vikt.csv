@@ -2,5 +2,7 @@ kort,long,fukt,mjöl,pris,default
 vatten,Vatten,1.0,0,0,350
 hydrering,Hydrering,0,0,0,0.7
 olja,Olja,0.5,0,46,0
+smör,Smör eller margarin,0.6,0,34,0
 äggvita,Äggvita,0.9,0,75,0
 surdeg,Surdeg,0.5,0.5,4.5,0
+socker,Socker,0.001,0,22,0

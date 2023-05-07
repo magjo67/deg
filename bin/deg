@@ -1,12 +1,16 @@
 #!/usr/bin/python3
 
+import deg
 import os
 import argparse
 import pandas as pd
-from ingredienser import Ingredienser
+from deg.ingredienser import Ingredienser
 
-ing_vikt = pd.read_csv('ing_vikt.csv', index_col='kort')
-ing_proc = pd.read_csv('ing_proc.csv', index_col='kort')
+ing_vikt_csv = deg.__path__[0] + '/ing_vikt.csv'
+ing_proc_csv = deg.__path__[0] + '/ing_proc.csv'
+
+ing_vikt = pd.read_csv(ing_vikt_csv, index_col='kort')
+ing_proc = pd.read_csv(ing_proc_csv, index_col='kort')
 ing_proc.sort_values(by='hydrering', inplace=True, ascending=False)
 
 parser = argparse.ArgumentParser(description='Räkna ut mjölmängder.')
