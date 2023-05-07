@@ -14,6 +14,9 @@ ing_proc = pd.read_csv(ing_proc_csv, index_col='kort')
 ing_proc.sort_values(by='hydrering', inplace=True, ascending=False)
 
 parser = argparse.ArgumentParser(description='Räkna ut mjölmängder.')
+# Argument för konfig
+parser.add_argument(
+        '--hydrering', default=0.7, metavar='', help="Hydrering 0.7")
 # Argument för fasta vikter
 for kort in ing_vikt.index:
     long = ing_vikt.long[kort].replace("%", "%%")
@@ -27,7 +30,6 @@ for kort in ing_proc.index:
         "--"+kort, default=ing_proc.default[kort], type=float, metavar='', help=long)
 args = parser.parse_args()
 vatten = args.vatten
-# print ("vatten = ", vatten)
 hydrering = args.hydrering
 # print ("hydrering = ", hydrering)
 vtot = 0
@@ -42,14 +44,10 @@ for kort, vikt in vars(args).items():
             vtot += vvikt
             mvikt = vikt * ing_vikt.mjöl[kort]
             mtot += mvikt
-            # print(kort, vikt, vikt * ing_vikt.fukt[kort], vikt * ing_vikt.mjöl[kort])
-            if vvikt > 0 and vvikt > 0:
-                rad = Ingredienser(kort, ing_vikt.long[kort], vikt, vikt * ing_vikt.pris[kort])
-                # print (rad)
-                bill.append(rad)
+            rad = Ingredienser(kort, ing_vikt.long[kort], vikt, vikt * ing_vikt.pris[kort])
+            bill.append(rad)
         except KeyError as e:
             None
-# print("vatten = ", vtot)
 # Räkna fram mjölmängder
 for kort, procent in vars(args).items():
     # print (kort, procent)
@@ -63,7 +61,6 @@ for kort, procent in vars(args).items():
         proctot += procent
         rad = Ingredienser(kort, ing_proc.long[kort], mvikt, mvikt * ing_proc.pris[kort])
         bill.append(rad)
-# print(proctot)
 if proctot < 100:
     vete = vtot * (100 - proctot) / hydrering / ing_proc.hydrering['vete10'] / 100
     mtot += vete
