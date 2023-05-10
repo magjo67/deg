@@ -44,7 +44,7 @@ for kort, vikt in vars(args).items():
             vtot += vvikt
             mvikt = vikt * ing_vikt.mjöl[kort]
             mtot += mvikt
-            rad = Ingredienser(kort, ing_vikt.long[kort], vikt, vikt * ing_vikt.pris[kort], 1 - ing_vikt.mjöl[kort])
+            rad = Ingredienser(kort, ing_vikt.long[kort], vikt, vikt * ing_vikt.pris[kort])
             bill.append(rad)
             textlen = max(textlen,len(ing_vikt.long[kort]))
         except KeyError as e:
@@ -60,22 +60,22 @@ for kort, procent in vars(args).items():
         mvikt = vtot * procent / hydrering / ing_proc.hydrering[kort] / 100
         mtot += mvikt
         proctot += procent
-        rad = Ingredienser(kort, ing_proc.long[kort], mvikt, mvikt * ing_proc.pris[kort],1)
+        rad = Ingredienser(kort, ing_proc.long[kort], mvikt, mvikt * ing_proc.pris[kort])
         bill.append(rad)
         textlen = max(textlen,len(ing_proc.long[kort]))
 
 if proctot < 100:
     vete = vtot * (100 - proctot) / hydrering / ing_proc.hydrering['vete10'] / 100
     mtot += vete
-    bill.append(Ingredienser("vete10", ing_proc.long["vete10"], vete, vete * ing_proc.pris["vete10"],1))
+    bill.append(Ingredienser("vete10", ing_proc.long["vete10"], vete, vete * ing_proc.pris["vete10"]))
     textlen = max(textlen, len(ing_proc.long["vete10"]))
 if proctot > 100:
     print("För många procent")
     exit()
 salt = (mtot + vtot) * args.salt / 100
-bill.insert(1, Ingredienser("salt", ing_proc.long["salt"], salt, salt * ing_proc.pris["salt"],1))
+bill.insert(1, Ingredienser("salt", ing_proc.long["salt"], salt, salt * ing_proc.pris["salt"]))
 yeast = (mtot + vtot) * args.jäst / 100
-bill.insert(2, Ingredienser("jäst", ing_proc.long["jäst"], yeast, yeast * ing_proc.pris["jäst"],1))
+bill.insert(2, Ingredienser("jäst", ing_proc.long["jäst"], yeast, yeast * ing_proc.pris["jäst"]))
 
 print(f"{'Ingredienser':<{textlen + 1}}=    {'Vikt':<4}    {'Bagarprocent':<5}  {'Pris':<5}")
 pristot = 0
@@ -83,6 +83,6 @@ vikttot = 0
 for rad in bill:
     pristot += rad.pris
     vikttot += rad.vikt
-    print(f"{rad.long:<{textlen + 1}}={rad.vikt:5.0f} gram {rad.vikt/mtot*100*rad.procent:4.0f} Procent {rad.pris/1000:5.2f} kr")
+    print(f"{rad.long:<{textlen + 1}}={rad.vikt:5.0f} gram {rad.vikt/mtot*100:4.0f} Procent {rad.pris/1000:5.2f} kr")
 print(f"{'Totalvikt':<{textlen + 1}}={vikttot:5.0f} gram, mjöl {mtot:.0f} gram, pris {pristot/1000:.2f} kr, total hydrering {vtot/mtot:.3f}")
 print("")
