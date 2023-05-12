@@ -24,8 +24,8 @@ for kort in ing_vikt.index:
         "--"+kort, default=ing_vikt.default[kort], type=float, metavar='', help=long)
 # Argument för procentuella
 for kort in ing_proc.index:
-    long = ing_proc.long[kort].replace("%", "%%") + "\t" + str(
-        ing_proc.hydrering[kort]) + "\t pris = "+str(ing_proc.pris[kort]) + "kr/kg"
+    long = ing_proc.long[kort].replace("%", "%%") + ", hydrering " + str(
+        ing_proc.hydrering[kort]) + ", "+str(ing_proc.pris[kort]) + "kr/kg"
     parser.add_argument(
         "--"+kort, default=ing_proc.default[kort], type=float, metavar='', help=long)
 args = parser.parse_args()
