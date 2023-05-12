@@ -22,3 +22,7 @@ Min lösning på det hela är att istället att vända på logiken.
 Om man utgår från mängden vatten och talar om hur många procent utav respektive mjölsort man vill ha.
 Detta kräver att man har någon form av tabell med olika mjölsorters uppsugningsförmåga.
 
+# Installation
+
+pip install git+https://github.com/magjo67/deg.git
+
