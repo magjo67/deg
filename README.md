@@ -24,5 +24,11 @@ Detta kräver att man har någon form av tabell med olika mjölsorters uppsugnin
 
 # Installation
 
+### Linux
+
 pip install git+https://github.com/magjo67/deg.git
+
+#### Uppgradering
+
+pip install --upgrade deg
 
