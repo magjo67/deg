@@ -1,6 +1,6 @@
 ## ing_proc.csv
 
-Innehåller alla mjölsorter samt ingredienser som man lägger till procentmässigt.
+Innehåller alla mjölsorter samt ingredienser som man lägger i procent.
 
 ## ing_vikt.csv
 
