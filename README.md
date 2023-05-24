@@ -32,18 +32,22 @@ Installera först git samt python
 
 #### Ubuntu
 sudo apt install python3-pip git
+
 pip install git+https://github.com/magjo67/deg.git
 
 #### Fedora
 sudo yum install python3-pip git
+
 pip install git+https://github.com/magjo67/deg.git
 
 #### OpenSUSE
 sudo zypper install python3-pip git
+
 pip install git+https://github.com/magjo67/deg.git
 
 #### Windows
 Kräver att git och python är installerad innan.
+
 pip install git+https://github.com/magjo67/deg.git
 
 
