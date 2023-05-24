@@ -10,7 +10,7 @@ authors = [
     {name = "Magnus Johansson", email = "magjo67@gmail.com"}
 ]
 version = "2.3.4"
-requires-python = ">=3.7"
+requires-python = ">=3.6"
 license = {text = "BSD-2-Clause"}
 classifiers = [
     "Development Status :: 3 - Alpha",
