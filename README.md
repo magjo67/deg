@@ -30,6 +30,9 @@ Syftet med programmet är inte att visa vad som blir bra eller gott, utan ett ve
 När det gäller olja och övriga "blöta" ingredienser så räknar jag som om de innehåller en viss mängd vatten.
 Det har inget med faktisk vattenhalt att göra utan är knutet till hur "kladdig" degen blir utav den ingrediensen.
 
+Grundidén är att när man hittat en hydrering till en viss typ av bröd, så kan man behålla den hydreringen och ändra alla andra ingredienser varpå den räknar fram hur mycket som behövs av respektive sort.
+Om inte summan av mjöl blir 100% så fyller den på med ICA Standardmjöl.
+
 ## Exempel
 
 Alla mjölegenskaper som är inmatade är tänkta för att man kalljäser över natten.
