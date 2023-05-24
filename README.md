@@ -151,3 +151,6 @@ pip install git+https://github.com/magjo67/deg.git
 
 pip install --upgrade deg
 
+###
+
+Jag mottar gärna förslag på fler mjölsorter eller andra ingredienser.
