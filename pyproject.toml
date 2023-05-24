@@ -3,3 +3,24 @@ requires = [
   "setuptools >= 40.9.0",
 ]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "deg"
+authors = [
+    {name = "Magnus Johansson", email = "magjo67@gmail.com"}
+]
+version = "2.3.4"
+requires-python = ">=3.7"
+license = {text = "BSD-2-Clause"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "pandas",
+]
+
+[project.scripts]
+deg = "deg:do_deg"
