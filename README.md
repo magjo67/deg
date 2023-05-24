@@ -47,9 +47,18 @@ pip install git+https://github.com/magjo67/deg.git
 
 #### Windows
 Kräver att git och python är installerad innan.
+Använd tex Chocolatey för att göra installationen.
 
+Följ då https://chocolatey.org/install
+
+~~~
+Från powershell med adminrättigheter
+choco install python --pre 
+choco install git
+
+Från en vanlig powershell
 pip install git+https://github.com/magjo67/deg.git
-
+~~~
 
 #### Uppgradering
 
