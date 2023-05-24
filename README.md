@@ -10,7 +10,7 @@ Syftet med programmet "deg" är att motverka detta beteende.
 
 ### Baker's percentage
 
-En del nyare recept så presenteras mängderna i procent i förhållande till mjölvikten.
+I en del nyare recept så presenteras mängderna i procent i förhållande till mjölvikten.
 Summan av mjölet är då 100%
 Alla övriga ingredienser anges sedan som en procentsats i förhållande till summan av mjölet.
 Även om detta är en bra metod för att dela med sig av ett recept så lider det utav samma betongproblem när man börja byta ut ingredienser.
@@ -23,7 +23,7 @@ Om man utgår från mängden vatten och talar om hur många procent utav respekt
 Detta kräver att man har någon form av tabell med olika mjölsorters uppsugningsförmåga.
 Tabellen som jag gjort utgår ifrån ICA's standardmjöl.
 Alla övriga mjölsorter är uttestade så att man utav programmet får en lika "kladdig" deg.
-Konfigfilerna är csv-filer som man kan lägga till fler ingredienser till.
+Konfigfilerna är csv-filer där man kan lägga till fler ingredienser.
 
 Syftet med programmet är inte att visa vad som blir bra eller gott, utan ett verktyg som gör att man kan byta ut en mjölsort mot en annan och brödet kommer att få liknande egenskaper.
 
@@ -33,7 +33,7 @@ Det har inget med faktisk vattenhalt att göra utan är knutet till hur "kladdig
 ## Exempel
 
 Alla mjölegenskaper som är inmatade är tänkta för att man kalljäser över natten.
-Så man rör ihop allt tills det ser jämnt fördelat ur.
+Så man rör ihop allt tills det ser jämnt fördelat ut.
 Man behöver inte bearbeta degen länge i någon maskin.
 
 Limpa för en 2 pound's form (rymmer 1.7 liter)
