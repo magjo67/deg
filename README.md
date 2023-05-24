@@ -13,7 +13,7 @@ Syftet med programmet "deg" är att motverka detta beteende.
 I en del nyare recept så presenteras mängderna i procent i förhållande till mjölvikten.
 Summan av mjölet är då 100%
 Alla övriga ingredienser anges sedan som en procentsats i förhållande till summan av mjölet.
-Även om detta är en bra metod för att dela med sig av ett recept så lider det utav samma betongproblem när man börja byta ut ingredienser.
+Även om detta är en bra metod för att dela med sig av ett recept så lider det utav samma betongproblem när man börjar byta ut ingredienser.
 Baker's percentage fungerar om man vill skala upp (eller ner) ett recept, inte om man vill ändra på det.
 
 ### Vattenprocent
