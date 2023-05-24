@@ -27,6 +27,9 @@ Konfigfilerna är csv-filer som man kan lägga till fler ingredienser till.
 
 Syftet med programmet är inte att visa vad som blir bra eller gott, utan ett verktyg som gör att man kan byta ut en mjölsort mot en annan och brödet kommer att få liknande egenskaper.
 
+När det gäller olja och övriga "blöta" ingredienser så räknar jag som om de innehåller en viss mängd vatten.
+Det har inget med faktisk vattenhalt att göra utan är knutet till hur "kladdig" degen blir utav den ingrediensen.
+
 ## Exempel
 
 Alla mjölegenskaper som är inmatade är tänkta för att man kalljäser över natten.
