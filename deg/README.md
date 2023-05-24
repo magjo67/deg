@@ -2,6 +2,8 @@
 
 Innehåller alla mjölsorter samt ingredienser som man lägger i procent.
 
+Stenhårda ingredienser som rågkross har jag först kokat.
+
 ## ing_vikt.csv
 
 Innehåller övriga ingredienser som man lägger till som fast vikt.
