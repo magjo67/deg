@@ -45,6 +45,10 @@ Baguetter
 
 deg --vatten 400 --hyd 0.68 --vete12 51.22
 
+Pizzadeg till fyra pizzor
+
+deg --vatten 500 --vete12 100 --hyd 0.6
+
 # Installation
 
 Installationen kräver Python3 samt git
