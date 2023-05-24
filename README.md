@@ -49,6 +49,53 @@ Pizzadeg till fyra pizzor
 
 deg --vatten 500 --vete12 100 --hyd 0.6
 
+## Hjälp
+
+deg -h skriver ut vilka mjölsorter som för ögonblicket finns i csv-filerna och vad de har för relativ hydrering samt pris
+
+~~~
+deg -h
+usage: deg [-h] [--hydrering] [--vatten] [--mjölk] [--olja] [--smör] [--äggvita] [--ägg] [--surdeg] [--socker]
+           [--vitsirap] [--havrekli] [--kruska] [--vetekli] [--vetegrodd] [--havregryn] [--rågmjöl] [--rågkross]
+           [--graham] [--fullkorn] [--råggrov] [--rågsikt] [--fullspec] [--fullkung] [--vete13] [--vete12]
+           [--dinkel] [--vete10] [--veteun] [--jäst] [--salt]
+
+Räkna ut mjölmängder.
+
+options:
+  -h, --help    show this help message and exit
+  --hydrering   Hydrering 0.7
+  --vatten      Vatten
+  --mjölk       Mjölk
+  --olja        Matolja
+  --smör        Smör eller margarin
+  --äggvita     Äggvita
+  --ägg         Ägg
+  --surdeg      Surdeg 100% hydrering
+  --socker      Strösocker
+  --vitsirap    Vit Sirap
+  --havrekli    Kungsörnen Havrekli, hydrering 2.5, 17.0kr/kg
+  --kruska      Kungsörnen Kruskakli, hydrering 2.44, 17.0kr/kg
+  --vetekli     Kungsörnen Vetekli, hydrering 2.4, 17.0kr/kg
+  --vetegrodd   Risenta vetegroddar, hydrering 2.1111, 30.0kr/kg
+  --havregryn   ICA Havregryn, hydrering 1.75, 12.0kr/kg
+  --rågmjöl     Kungsörnen Fint rågmjöl, hydrering 1.6, 13.0kr/kg
+  --rågkross    Kungsörnen rågkross, hydrering 1.53, 16.0kr/kg
+  --graham      ICA Finkornigt graham, hydrering 1.34, 15.0kr/kg
+  --fullkorn    ICA fullkorn gramhamsmjöl, hydrering 1.25, 15.0kr/kg
+  --råggrov     Kungsörnen Grovmalt rågmjöl, hydrering 1.18, 14.0kr/kg
+  --rågsikt     ICA Rågsikt, hydrering 1.14, 12.0kr/kg
+  --fullspec    Kungsörnen Vetemjöl Special Fullkorn, hydrering 1.12, 18.5kr/kg
+  --fullkung    Kungsörnen Vetemjöl Fullkorn, hydrering 1.1, 16.0kr/kg
+  --vete13      Finax TIPO 00 13%, hydrering 1.09, 15.5kr/kg
+  --vete12      ICA Specialvetemjöl 12%, hydrering 1.05, 13.25kr/kg
+  --dinkel      ICA Ekologisk dinkel 11%, hydrering 1.03, 32.0kr/kg
+  --vete10      ICA Vetemjöl 10%, hydrering 1.0, 8.3kr/kg
+  --veteun      United Gross 9.5%, hydrering 0.97, 14.0kr/kg
+  --jäst        Jäst, hydrering 0.0, 64.0kr/kg
+  --salt        Salt, hydrering 0.0, 16.0kr/kg
+~~~
+
 # Installation
 
 Installationen kräver Python3 samt git
