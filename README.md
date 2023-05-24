@@ -150,6 +150,16 @@ brew install python3 git
 
 pip install git+https://github.com/magjo67/deg.git
 ~~~
+#### Lokal installation
+
+Ifall man vill justera mjölsorter så är det enklare att först checka ut så man får ett lokalt repo.
+~~~
+git clone https://github.com/magjo67/deg.git
+Information om mjölsorterna finns i filen ing_proc.csv som ligger i katalogen deg
+efter att man justerat i den så kan man låta pip installera från den katalogen man checkade ut.
+
+pip install .
+~~~
 #### Uppgradering
 
 pip install --upgrade deg
