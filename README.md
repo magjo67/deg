@@ -1,6 +1,6 @@
 ## deg
 Program för att skapa degrecept.
-Tänk att köra från kommandoraden.
+Tänkt att köra från kommandoraden.
 
 ----
 
