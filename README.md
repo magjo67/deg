@@ -1,7 +1,21 @@
 ## deg
-Program för att skapa degrecept
+Program för att skapa degrecept.
+Tänk att köra från kommandoraden.
 
 ----
+
+
+### Exempel
+
+~~~
+$ deg --vatten 500 --pizza 100 --hyd 0.62
+Ingredienser         =    Vikt    Bagarprocent  Pris 
+Vatten               =  500 gram   65 Procent  0.01 kr
+Salt                 =   14 gram    2 Procent  0.17 kr
+Jäst                 =    8 gram    1 Procent  0.60 kr
+Kungsörnen Pizzamjöl =  768 gram  100 Procent 12.77 kr
+Totalvikt            = 1290 gram, mjöl 768 gram, pris 13.56 kr, total hydrering 0.651
+~~~
 
 ### Historia
 
