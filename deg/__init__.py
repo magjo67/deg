@@ -21,7 +21,7 @@ def do_deg():
     parser = argparse.ArgumentParser(description='Räkna ut mjölmängder.')
     # Argument för konfig
     parser.add_argument(
-            '--hydrering', default=0.7, type=float, metavar='', help="Hydrering 0.7")
+            '--hydrering', default=0.68, type=float, metavar='', help="Hydrering 0.7")
     # Argument för fasta vikter
     for kort in ing_vikt.index:
         long = ing_vikt.long[kort].replace("%", "%%")
