@@ -74,8 +74,8 @@ def do_deg():
         mtot += vete
         bill.append(Ingredienser("vete10", ing_proc.long["vete10"], vete, vete * ing_proc.pris["vete10"]))
         textlen = max(textlen, len(ing_proc.long["vete10"]))
-    if proctot > 100:
-        print("För många procent")
+    if round(proctot,1) > 100:
+        print(round(proctot,1), " är för många procent")
         exit()
     salt = (mtot + vtot) * args.salt / 100
     bill.insert(1, Ingredienser("salt", ing_proc.long["salt"], salt, salt * ing_proc.pris["salt"]))
