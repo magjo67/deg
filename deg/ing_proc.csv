@@ -1,8 +1,8 @@
 kort,long,hydrering,pris,default
-salt,Salt,0,12,1.1
-jäst,Jäst,0,79,0.6
-vete10,ICA Vetemjöl 10%,1.0,8.48,0
-vete12,ICA Specialvetemjöl 12%,1.05,12.75,0
+salt,Salt,0,12,1.3
+jäst,Jäst,0,70,0.6
+vete10,ICA Vetemjöl 10%,1.0,8.75,0
+vete12,ICA Specialvetemjöl 12%,1.05,12.48,0
 vete13,Finax TIPO 00 13%,1.09,15.5,0
 veteun,United Gross 9.5%,0.97,15.98,0
 fullkung,Kungsörnen Graham,1.1,16.98,0
@@ -14,11 +14,12 @@ rågmjöl,Kungsörnen Fint rågmjöl,1.6,16.63,0
 råggrov,Kungsörnen Grovmalt rågmjöl,1.18,16.63,0
 rågkross,Kungsörnen rågkross,1.53,25.9,0
 graham,ICA Finkornigt graham,1.34,14.95,0
-kruska,Kungsörnen Kruskakli,2.44,28.33,0
-vetekli,Kungsörnen Vetekli,2.4,23.9,0
-vetegrodd,Risenta vetegroddar,2.1111,75.0,0
+kruska,Kungsörnen Kruskakli,2.44,24.29,0
+vetekli,Kungsörnen Vetekli,2.4,23.90,0
+vetegrodd,Risenta vetegroddar,2.1111,75.9,0
 havregryn,ICA Havregryn,1.75,15.0,0
-havrekli,Kungsörnen Havrekli,2.5,58.33,0
+havrekli,Kungsörnen Havrekli,2.5,56.5,0
 vetekross,Kungsörnen vetekross,1.5,27.9,0
 pizza,Kungsörnen Pizzamjöl,1.05,16.63,0
 lanapoletana,LaNapoletana,1.03,30.0,0
+wapnö,Wapnö Vetemjöl siktat,1.0,16.0,0
