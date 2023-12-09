@@ -1,8 +1,8 @@
 kort,long,hydrering,pris,default
 salt,Salt,0,12,1.3
 jäst,Jäst,0,70,0.6
-vete10,ICA Vetemjöl 10%,1.0,8.75,0
-vete12,ICA Specialvetemjöl 12%,1.05,12.48,0
+vete10,ICA Vetemjöl 10%,1.0,8.975,0
+vete12,ICA Specialvetemjöl 12%,1.05,12.475,0
 vete13,Finax TIPO 00 13%,1.09,15.5,0
 vete95,Finax Pâtisserie 9.5%,0.95,18.5,0
 veteun,United Gross 9.5%,0.97,15.98,0
@@ -25,3 +25,4 @@ pizza,Kungsörnen Pizzamjöl,1.05,16.63,0
 lanapoletana,LaNapoletana,1.03,30.0,0
 wapnö,Wapnö Vetemjöl siktat,0.95,16.0,0
 bulgur,ICA Bulgur,1.2,33.0,0
+cream,Manitoba Cream,1.05,14.25,0
