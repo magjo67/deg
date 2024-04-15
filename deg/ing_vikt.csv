@@ -1,6 +1,7 @@
 kort,long,fukt,mjöl,pris,default
 vatten,Vatten,1.0,0,0.03,350
 mjölk,Mjölk,0.89,0,11.97,0
+grädde,Grädde,0.9,0,55,0
 olja,Matolja,0.6,0,46,0
 smör,Smör eller margarin,0.4,0,34,0
 ister,Ister,0.4,0,49,0
@@ -13,3 +14,4 @@ sirap,Sirap,0.2,0,24.7,0
 solros,ICA Solroskärnor,0.0,0,54.88,0
 lingon,Lingonsylt,0.5,0,39.0,0
 gräddfil,Gräddfil,0.9,0,43.0,0
+drav,Drav från ölbryggning,0.53,0.47,0,0
