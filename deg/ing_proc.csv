@@ -3,8 +3,8 @@ salt,Salt,0,12,1.3
 jäst,Jäst,0,70,0.6
 vete10,ICA Vetemjöl 10%,1.0,9.25,0
 ekospec,ICA Special EKO KRAV,1.02,13.475,0
-vete12,ICA Specialvetemjöl 12%,1.05,12.475,0
-vete13,Finax TIPO 00 13%,1.09,15.5,0
+vete12,ICA Specialvetemjöl 12%,1.06,12.475,0
+vete13,Finax TIPO 00 13%,1.11,15.5,0
 vete95,Finax Pâtisserie 9.5%,0.95,18.5,0
 veteun,United Gross 9.5%,0.97,15.98,0
 fullkung,Kungsörnen Graham,1.1,16.98,0
@@ -29,4 +29,5 @@ bulgur,ICA Bulgur,1.2,33.0,0
 cream,Manitoba Cream,1.05,14.25,0
 4säd,Lantbrödsmjöl 4 Sädesslag,1.18,13.25,0
 durum,Kungsörnen Durumvete,1.1,31.50,0
-caputo,Caputo Pizzeria 00,1.09,32,0
+caputo,Caputo Pizzeria 00,1.10,32,0
+kungspec,Kungsörnen Vetemjöl Special,1.04,16,0
