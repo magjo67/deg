@@ -173,7 +173,8 @@ Installationen kräver Python3 (minimum 3.8) samt git
 sudo apt install python3-pip git
 pip install git+https://github.com/magjo67/deg.git
 
-Nyare Ubuntu ogillar att man installerar saker med pip för att inte bryta beroende mellan olika program. Rekommendationen då är att installera i en virtuell environment.
+Nyare Ubuntu ogillar att man installerar saker med pip för att inte bryta beroende mellan olika program.
+Rekommendationen då är att installera i en virtuell environment.
 Då fungerar:
 
 sudo apt install pipx git
