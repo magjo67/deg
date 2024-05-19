@@ -4,19 +4,6 @@ Tänkt att köra från kommandoraden.
 
 ----
 
-
-### Exempel
-
-~~~
-$ deg --vatten 500 --pizza 100 --hyd 0.62
-Ingredienser         =    Vikt    Bagarprocent  Pris 
-Vatten               =  500 gram   65 Procent  0.01 kr
-Salt                 =   14 gram    2 Procent  0.17 kr
-Jäst                 =    8 gram    1 Procent  0.60 kr
-Kungsörnen Pizzamjöl =  768 gram  100 Procent 12.77 kr
-Totalvikt            = 1290 gram, mjöl 768 gram, pris 13.56 kr, total hydrering 0.651
-~~~
-
 ### Historia
 
 Har ni någon gång varit med om att byta en mjölsort mot en annan och så blir resultatet en betongklump?
@@ -46,6 +33,7 @@ Det har inget med faktisk vattenhalt att göra utan är knutet till hur "kladdig
 
 Grundidén är att när man hittat en hydrering till en viss typ av bröd, så kan man behålla den hydreringen och ändra alla andra ingredienser varpå den räknar fram hur mycket som behövs av respektive sort.
 Om inte summan av mjöl blir 100% så fyller den på med ICA Standardmjöl.
+Ifall man inte vill använda ICA's mjöl som standard så finns parametern --goto som då blir den mjölsort som används för att fylla upp till 100%
 
 ## Exempel
 
@@ -55,19 +43,55 @@ Man behöver inte bearbeta degen länge i någon maskin.
 
 Limpa för en 2 pound's form (rymmer 1.7 liter)
 
-deg --vatten 385 --hyd 0.68 --vete12 28 --rågsikt 25 --havregryn 15
+~~~
+$ deg --vatten 385 --vete12 28 --rågsikt 25 --havregryn 15Ingredienser            =    Vikt    Bagarprocent  Pris 
+Vatten                  =  385 gram   75 Procent  0.01 kr
+Salt                    =   12 gram    2 Procent  0.14 kr
+Jäst                    =    5 gram    1 Procent  0.38 kr
+ICA Havregryn           =   57 gram   11 Procent  0.85 kr
+ICA Rågsikt             =  129 gram   25 Procent  1.51 kr
+ICA Specialvetemjöl 12% =  150 gram   29 Procent  1.87 kr
+ICA Vetemjöl 10%        =  181 gram   35 Procent  1.68 kr
+Totalvikt               =  918 gram, mjöl 516 gram, pris 6.43 kr, total hydrering 0.746
+~~~
 
 Bullar med grovt rågmjöl
 
-deg --hyd 0.68 --vatten 500 --rågsikt 30 --råggrov 10
+~~~
+$ deg --vatten 500 --rågsikt 30 --råggrov 10
+Ingredienser                =    Vikt    Bagarprocent  Pris 
+Vatten                      =  500 gram   71 Procent  0.01 kr
+Salt                        =   16 gram    2 Procent  0.19 kr
+Jäst                        =    7 gram    1 Procent  0.51 kr
+Kungsörnen Grovmalt rågmjöl =   62 gram    9 Procent  1.04 kr
+ICA Rågsikt                 =  201 gram   28 Procent  2.36 kr
+ICA Vetemjöl 10%            =  441 gram   63 Procent  4.08 kr
+Totalvikt                   = 1227 gram, mjöl 704 gram, pris 8.18 kr, total hydrering 0.710
+~~~
 
 Baguetter
 
-deg --vatten 400 --hyd 0.68 --vete12 51.22
+~~~
+$ deg --vatten 400 --hyd 0.68 --vete12 51.45
+Ingredienser            =    Vikt    Bagarprocent  Pris 
+Vatten                  =  400 gram   70 Procent  0.01 kr
+Salt                    =   13 gram    2 Procent  0.15 kr
+Jäst                    =    6 gram    1 Procent  0.41 kr
+ICA Specialvetemjöl 12% =  286 gram   50 Procent  3.56 kr
+ICA Vetemjöl 10%        =  286 gram   50 Procent  2.64 kr
+Totalvikt               =  990 gram, mjöl 571 gram, pris 6.77 kr, total hydrering 0.700
+~~~
 
-Pizzadeg till fyra pizzor
-
-deg --vatten 500 --vete12 100 --hyd 0.6
+Pizzadeg till två pizzor
+~~~
+$ deg --vatten 250 --hyd 0.62 --goto vete13
+Ingredienser      =    Vikt    Bagarprocent  Pris 
+Vatten            =  250 gram   69 Procent  0.01 kr
+Salt              =    8 gram    2 Procent  0.10 kr
+Jäst              =    4 gram    1 Procent  0.26 kr
+Finax TIPO 00 13% =  363 gram  100 Procent  5.63 kr
+Totalvikt         =  625 gram, mjöl 363 gram, pris 5.99 kr, total hydrering 0.688
+~~~
 
 ## Hjälp
 
@@ -75,55 +99,85 @@ deg -h skriver ut vilka mjölsorter som för ögonblicket finns i csv-filerna oc
 
 ~~~
 deg -h
-usage: deg [-h] [--hydrering] [--vatten] [--mjölk] [--olja] [--smör] [--äggvita] [--ägg] [--surdeg] [--socker]
-           [--vitsirap] [--havrekli] [--kruska] [--vetekli] [--vetegrodd] [--havregryn] [--rågmjöl] [--rågkross]
-           [--graham] [--fullkorn] [--råggrov] [--rågsikt] [--fullspec] [--fullkung] [--vete13] [--vete12]
-           [--dinkel] [--vete10] [--veteun] [--jäst] [--salt]
+usage: deg [-h] [--hydrering] [--goto] [--vatten] [--mjölk] [--grädde] [--olja] [--smör] [--ister] [--äggvita]
+           [--ägg] [--surdeg] [--socker] [--vitsirap] [--sirap] [--honung] [--solros] [--lingon] [--gräddfil]
+           [--drav] [--pmjöl] [--havrekli] [--kruska] [--vetekli] [--vetegrodd] [--rågmjöl] [--rågkross]
+           [--vetekross] [--havregryn] [--graham] [--fullkung] [--bulgur] [--råggrov] [--4säd] [--fullspec]
+           [--vete13] [--durum] [--caputo] [--rågsikt] [--kungsikt] [--pizza] [--vete12] [--cream] [--kungspec]
+           [--lanapoletana] [--dinkel] [--ekospec] [--vete10] [--veteun] [--wapnö] [--vete95] [--jäst] [--salt]
 
 Räkna ut mjölmängder.
 
 options:
-  -h, --help    show this help message and exit
-  --hydrering   Hydrering 0.7
-  --vatten      Vatten
-  --mjölk       Mjölk
-  --olja        Matolja
-  --smör        Smör eller margarin
-  --äggvita     Äggvita
-  --ägg         Ägg
-  --surdeg      Surdeg 100% hydrering
-  --socker      Strösocker
-  --vitsirap    Vit Sirap
-  --havrekli    Kungsörnen Havrekli, hydrering 2.5, 17.0kr/kg
-  --kruska      Kungsörnen Kruskakli, hydrering 2.44, 17.0kr/kg
-  --vetekli     Kungsörnen Vetekli, hydrering 2.4, 17.0kr/kg
-  --vetegrodd   Risenta vetegroddar, hydrering 2.1111, 30.0kr/kg
-  --havregryn   ICA Havregryn, hydrering 1.75, 12.0kr/kg
-  --rågmjöl     Kungsörnen Fint rågmjöl, hydrering 1.6, 13.0kr/kg
-  --rågkross    Kungsörnen rågkross, hydrering 1.53, 16.0kr/kg
-  --graham      ICA Finkornigt graham, hydrering 1.34, 15.0kr/kg
-  --fullkorn    ICA fullkorn gramhamsmjöl, hydrering 1.25, 15.0kr/kg
-  --råggrov     Kungsörnen Grovmalt rågmjöl, hydrering 1.18, 14.0kr/kg
-  --rågsikt     ICA Rågsikt, hydrering 1.14, 12.0kr/kg
-  --fullspec    Kungsörnen Vetemjöl Special Fullkorn, hydrering 1.12, 18.5kr/kg
-  --fullkung    Kungsörnen Vetemjöl Fullkorn, hydrering 1.1, 16.0kr/kg
-  --vete13      Finax TIPO 00 13%, hydrering 1.09, 15.5kr/kg
-  --vete12      ICA Specialvetemjöl 12%, hydrering 1.05, 13.25kr/kg
-  --dinkel      ICA Ekologisk dinkel 11%, hydrering 1.03, 32.0kr/kg
-  --vete10      ICA Vetemjöl 10%, hydrering 1.0, 8.3kr/kg
-  --veteun      United Gross 9.5%, hydrering 0.97, 14.0kr/kg
-  --jäst        Jäst, hydrering 0.0, 64.0kr/kg
-  --salt        Salt, hydrering 0.0, 16.0kr/kg
+  -h, --help       show this help message and exit
+  --hydrering      Hydrering 0.68
+  --goto           Defaultmjöl = vete10
+  --vatten         Vatten
+  --mjölk          Mjölk
+  --grädde         Grädde
+  --olja           Matolja
+  --smör           Smör eller margarin
+  --ister          Ister
+  --äggvita        Äggvita
+  --ägg            Ägg
+  --surdeg         Surdeg 100% hydrering
+  --socker         Strösocker
+  --vitsirap       Vit Sirap
+  --sirap          Sirap
+  --honung         Honung
+  --solros         ICA Solroskärnor
+  --lingon         Lingonsylt
+  --gräddfil       Gräddfil
+  --drav           Drav från ölbryggning
+  --pmjöl          Potatismjöl
+  --havrekli       Kungsörnen Havrekli, hydrering 2.5, 56.5kr/kg
+  --kruska         Kungsörnen Kruskakli, hydrering 2.44, 24.29kr/kg
+  --vetekli        Kungsörnen Vetekli, hydrering 2.4, 23.9kr/kg
+  --vetegrodd      Risenta vetegroddar, hydrering 1.9, 75.9kr/kg
+  --rågmjöl        Kungsörnen Fint rågmjöl, hydrering 1.6, 16.63kr/kg
+  --rågkross       Kungsörnen rågkross, hydrering 1.53, 25.9kr/kg
+  --vetekross      Kungsörnen vetekross, hydrering 1.5, 27.9kr/kg
+  --havregryn      ICA Havregryn, hydrering 1.5, 15.0kr/kg
+  --graham         ICA Finkornigt graham, hydrering 1.34, 14.95kr/kg
+  --fullkung       Kungsörnen Graham, hydrering 1.25, 16.98kr/kg
+  --bulgur         ICA Bulgur, hydrering 1.2, 33.0kr/kg
+  --råggrov        Kungsörnen Grovmalt rågmjöl, hydrering 1.18, 16.63kr/kg
+  --4säd           Lantbrödsmjöl 4 Sädesslag, hydrering 1.18, 13.25kr/kg
+  --fullspec       Kungsörnen Vetemjöl Special Fullkorn, hydrering 1.12, 17.48kr/kg
+  --vete13         Finax TIPO 00 13%, hydrering 1.11, 15.5kr/kg
+  --durum          Kungsörnen Durumvete, hydrering 1.1, 31.5kr/kg
+  --caputo         Caputo Pizzeria 00, hydrering 1.1, 32.0kr/kg
+  --rågsikt        ICA Rågsikt, hydrering 1.1, 11.75kr/kg
+  --kungsikt       Rågsikt Kungsörnen, hydrering 1.07, 12.48kr/kg
+  --pizza          Kungsörnen Pizzamjöl, hydrering 1.07, 16.63kr/kg
+  --vete12         ICA Specialvetemjöl 12%, hydrering 1.06, 12.475kr/kg
+  --cream          Manitoba Cream, hydrering 1.05, 14.25kr/kg
+  --kungspec       Kungsörnen Vetemjöl Special, hydrering 1.04, 16.0kr/kg
+  --lanapoletana   LaNapoletana, hydrering 1.03, 30.0kr/kg
+  --dinkel         ICA Ekologisk dinkel 11%, hydrering 1.03, 25.95kr/kg
+  --ekospec        ICA Special EKO KRAV, hydrering 1.02, 13.475kr/kg
+  --vete10         ICA Vetemjöl 10%, hydrering 1.0, 9.25kr/kg
+  --veteun         United Gross 9.5%, hydrering 0.97, 15.98kr/kg
+  --wapnö          Wapnö Vetemjöl siktat, hydrering 0.95, 16.0kr/kg
+  --vete95         Finax Pâtisserie 9.5%, hydrering 0.95, 18.5kr/kg
+  --jäst           Jäst, hydrering 0.0, 70.0kr/kg
+  --salt           Salt, hydrering 0.0, 12.0kr/kg
 ~~~
 
 # Installation
 
-Installationen kräver Python3 samt git
+Installationen kräver Python3 (minimum 3.8) samt git
 
 #### Ubuntu
 ~~~
 sudo apt install python3-pip git
 pip install git+https://github.com/magjo67/deg.git
+
+Nyare Ubuntu ogillar att man installerar saker med pip för att inte bryta beroende mellan olika program. Rekommendationen då är att installera i en virtuell environment.
+Då fungerar:
+
+sudo apt install pipx git
+pipx install git+https://github.com/magjo67/deg.git
 ~~~
 #### Fedora
 ~~~
