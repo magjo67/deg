@@ -21,7 +21,11 @@ def do_deg():
     parser = argparse.ArgumentParser(description='Räkna ut mjölmängder.')
     # Argument för konfig
     parser.add_argument(
-            '--hydrering', default=0.68, type=float, metavar='', help="Hydrering 0.7")
+            '--hydrering', default=0.68, type=float, metavar='', help="Hydrering 0.68")
+    parser.add_argument(
+            '--goto', default='vete10', metavar='', help="Defaultmjöl = vete10")
+    # Lista av ickeingredienser
+    skiplist = [ 'hydrering', 'goto' ]
     # Argument för fasta vikter
     for kort in ing_vikt.index:
         long = ing_vikt.long[kort].replace("%", "%%")
@@ -36,6 +40,7 @@ def do_deg():
     args = parser.parse_args()
     vatten = args.vatten
     hydrering = args.hydrering
+    goto = args.goto
     vtot = 0
     mtot = 0
     proctot = 0
@@ -43,6 +48,8 @@ def do_deg():
     textlen = 0
     # Räkna fram mängd vatten
     for kort, vikt in vars(args).items():
+        if kort in skiplist:
+            continue
         if vikt > 0:
             try:
                 vvikt = vikt * ing_vikt.fukt[kort]
@@ -57,6 +64,8 @@ def do_deg():
     proctot=(mtot/vtot*100*hydrering)
     # Räkna fram mjölmängder
     for kort, procent in vars(args).items():
+        if kort in skiplist:
+            continue
         try:
             lhyd = ing_proc.hydrering[kort]
         except KeyError as e:
@@ -70,10 +79,10 @@ def do_deg():
             textlen = max(textlen,len(ing_proc.long[kort]))
 
     if proctot < 100:
-        vete = vtot * (100 - proctot) / hydrering / ing_proc.hydrering['vete10'] / 100
+        vete = vtot * (100 - proctot) / hydrering / ing_proc.hydrering[goto] / 100
         mtot += vete
-        bill.append(Ingredienser("vete10", ing_proc.long["vete10"], vete, vete * ing_proc.pris["vete10"]))
-        textlen = max(textlen, len(ing_proc.long["vete10"]))
+        bill.append(Ingredienser(goto, ing_proc.long[goto], vete, vete * ing_proc.pris[goto]))
+        textlen = max(textlen, len(ing_proc.long[goto]))
     if round(proctot,1) > 100:
         print(round(proctot,1), " är för många procent")
         exit()
