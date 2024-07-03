@@ -44,53 +44,54 @@ Man behöver inte bearbeta degen länge i någon maskin.
 Limpa för en 2 pound's form (rymmer 1.7 liter)
 
 ~~~
-$ deg --vatten 385 --vete12 28 --rågsikt 25 --havregryn 15Ingredienser            =    Vikt    Bagarprocent  Pris 
-Vatten                  =  385 gram   75 Procent  0.01 kr
+$ deg --vatten 385 --vete12 28 --rågsikt 25 --havregryn 15
+Ingredienser            =    Vikt    Bagarprocent  Pris 
+Vatten                  =  385 gram   74 Procent  0.01 kr
 Salt                    =   12 gram    2 Procent  0.14 kr
 Jäst                    =    5 gram    1 Procent  0.38 kr
 ICA Havregryn           =   57 gram   11 Procent  0.85 kr
-ICA Rågsikt             =  129 gram   25 Procent  1.51 kr
 ICA Specialvetemjöl 12% =  150 gram   29 Procent  1.87 kr
-ICA Vetemjöl 10%        =  181 gram   35 Procent  1.68 kr
-Totalvikt               =  918 gram, mjöl 516 gram, pris 6.43 kr, total hydrering 0.746
+ICA Rågsikt             =  135 gram   26 Procent  1.58 kr
+ICA Vetemjöl 10%        =  181 gram   35 Procent  1.59 kr
+Totalvikt               =  924 gram, mjöl 522 gram, pris 6.42 kr, total hydrering 0.737
 ~~~
 
-Bullar med grovt rågmjöl
+Frallor med grovt rågmjöl
 
 ~~~
 $ deg --vatten 500 --rågsikt 30 --råggrov 10
 Ingredienser                =    Vikt    Bagarprocent  Pris 
-Vatten                      =  500 gram   71 Procent  0.01 kr
+Vatten                      =  500 gram   70 Procent  0.01 kr
 Salt                        =   16 gram    2 Procent  0.19 kr
 Jäst                        =    7 gram    1 Procent  0.51 kr
 Kungsörnen Grovmalt rågmjöl =   62 gram    9 Procent  1.04 kr
-ICA Rågsikt                 =  201 gram   28 Procent  2.36 kr
-ICA Vetemjöl 10%            =  441 gram   63 Procent  4.08 kr
-Totalvikt                   = 1227 gram, mjöl 704 gram, pris 8.18 kr, total hydrering 0.710
+ICA Rågsikt                 =  210 gram   29 Procent  2.47 kr
+ICA Vetemjöl 10%            =  441 gram   62 Procent  3.86 kr
+Totalvikt                   = 1237 gram, mjöl 714 gram, pris 8.08 kr, total hydrering 0.701
 ~~~
 
 Baguetter
 
 ~~~
-$ deg --vatten 400 --hyd 0.68 --vete12 51.45
+$ deg --vatten 400 --hyd 0.68 --vete12 41
 Ingredienser            =    Vikt    Bagarprocent  Pris 
 Vatten                  =  400 gram   70 Procent  0.01 kr
 Salt                    =   13 gram    2 Procent  0.15 kr
 Jäst                    =    6 gram    1 Procent  0.41 kr
-ICA Specialvetemjöl 12% =  286 gram   50 Procent  3.56 kr
-ICA Vetemjöl 10%        =  286 gram   50 Procent  2.64 kr
-Totalvikt               =  990 gram, mjöl 571 gram, pris 6.77 kr, total hydrering 0.700
+ICA Specialvetemjöl 12% =  228 gram   40 Procent  2.84 kr
+ICA Vetemjöl 10%        =  347 gram   60 Procent  3.04 kr
+Totalvikt               =  993 gram, mjöl 575 gram, pris 6.45 kr, total hydrering 0.696
 ~~~
 
 Pizzadeg till två pizzor
 ~~~
-$ deg --vatten 250 --hyd 0.62 --goto vete13
+$ deg --vatten 250 --hyd 0.64 --goto vete13
 Ingredienser      =    Vikt    Bagarprocent  Pris 
-Vatten            =  250 gram   69 Procent  0.01 kr
-Salt              =    8 gram    2 Procent  0.10 kr
-Jäst              =    4 gram    1 Procent  0.26 kr
-Finax TIPO 00 13% =  363 gram  100 Procent  5.63 kr
-Totalvikt         =  625 gram, mjöl 363 gram, pris 5.99 kr, total hydrering 0.688
+Vatten            =  250 gram   71 Procent  0.01 kr
+Salt              =    8 gram    2 Procent  0.09 kr
+Jäst              =    4 gram    1 Procent  0.25 kr
+Finax TIPO 00 13% =  352 gram  100 Procent  5.45 kr
+Totalvikt         =  613 gram, mjöl 352 gram, pris 5.81 kr, total hydrering 0.710
 ~~~
 
 ## Hjälp
