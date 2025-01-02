@@ -9,7 +9,7 @@ name = "deg"
 authors = [
     {name = "Magnus Johansson", email = "magjo67@gmail.com"}
 ]
-version = "2.4.6"
+version = "2.4.7"
 requires-python = ">=3.6"
 license = {text = "BSD-2-Clause"}
 classifiers = [
