@@ -61,7 +61,7 @@ def do_deg():
                 textlen = max(textlen,len(ing_vikt.long[kort]))
             except KeyError as e:
                 None
-    proctot=(mtot/vtot*100*hydrering)
+    proctot=mtot/vtot*100*hydrering
     # Räkna fram mjölmängder
     for kort, procent in vars(args).items():
         if kort in skiplist:
